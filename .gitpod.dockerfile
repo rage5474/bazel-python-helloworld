@@ -7,5 +7,4 @@ RUN sudo apt-get update \
     g++ \
     zlib1g-dev \
     unzip \
-    python3 \
- && sudo rm -rf /var/lib/apt/lists/*
+    python3
