@@ -4,13 +4,6 @@ http_archive(
     name = "python_version",
     urls = ["https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz"],
     strip_prefix = "Python-3.6.3",
-    build_file_content = """
-genrule(
-    name = "build_python",
-    srcs = glob(["**"]),
-    outs = ["python"],
-    cmd = "./external/python_version/configure && make -j4 && cp python $@",
-    visibility = ["//visibility:public"],
-)""",
+    build_file = "@//:python363.BUILD",
 )
 
