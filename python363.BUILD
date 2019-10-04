@@ -1,5 +1,3 @@
-
-
 py_runtime(
      name = "python-3.6.3",
      files = [],
