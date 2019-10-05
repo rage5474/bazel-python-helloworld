@@ -1,6 +1,6 @@
 py_test(
-    name = "test_main",
-    srcs = ["test_main.py"],
+    name = "test_version",
+    srcs = ["tests/test_version.py"],
     data = ["//pythonreq:trigger_install_requirements"],
 )
 
