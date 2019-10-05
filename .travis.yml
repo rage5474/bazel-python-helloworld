@@ -6,6 +6,7 @@ install:
 - sudo apt-get update
 - sudo apt-get install bazel
 script:
+- bazel run //pythonreq:install_requirements
 - bazel test :test_version
 addons:
   apt:
