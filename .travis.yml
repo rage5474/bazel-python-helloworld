@@ -11,3 +11,4 @@ addons:
   apt:
     packages:
     - curl
+    - gcc
