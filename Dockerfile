@@ -1,10 +1,12 @@
 FROM gitpod/workspace-full:latest
 
+RUN wget -q https://github.com/bazelbuild/bazel/releases/download/0.29.1/bazel-0.29.1-installer-linux-x86_64.sh \
+  && chmod +x bazel-0.29.1-installer-linux-x86_64.sh \
+  && ./bazel-0.29.1-installer-linux-x86_64.sh --user \
+  && echo 'export PATH="$PATH:$HOME/bin" >> ~/.bashrc'
+
 USER root
 
-RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list \
-  && curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
-
 RUN apt-get update \
-  && apt-get install -y openjdk-8-jdk bazel \
+  && apt-get install -y openjdk-8-jdk \
   && rm -rf /var/lib/apt/lists/*
