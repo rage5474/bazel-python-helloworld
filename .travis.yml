@@ -8,6 +8,8 @@ install:
 script:
 - bazel run //pythonreq:install_requirements
 - bazel test :test_version
+- bazel run //pyinstallerw:run
+- ./bazel-out/k8-fastbuild/bin/pyinstallerw/run.runfiles/__main__/dist/hello
 addons:
   apt:
     packages:

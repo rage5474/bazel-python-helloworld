@@ -1,2 +1,2 @@
-run --python_top=@python_version//:python-3.7.4 --incompatible_use_python_toolchains=false
+run  --python_top=@python_version//:python-3.7.4 --incompatible_use_python_toolchains=false
 test --run_under=//pythonreq:install_requirements --python_top=@python_version//:python-3.7.4 --incompatible_use_python_toolchains=false
